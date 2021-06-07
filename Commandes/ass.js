@@ -8,7 +8,7 @@ module.exports = {
     category: "NSFW",
   description: "Sends ass",
   run: async (client, message, args, level) => {
-      message.delete()
+    message.delete()
   //command
 
   //Checks channel for nsfw
@@ -34,6 +34,8 @@ const ass = new Discord.MessageEmbed()
       .setTitle("Ass")
       .setColor(`#FF0000`)
       .setImage("attachment://file.png").attachFiles([{ attachment: res, name: "file.png" }])
+      .setFooter(`commande effectué par ${message.author.tag}`)
+      .setTimestamp()
 
 
     message.channel.send(ass);
