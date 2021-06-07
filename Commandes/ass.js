@@ -8,6 +8,7 @@ module.exports = {
     category: "NSFW",
   description: "Sends ass",
   run: async (client, message, args, level) => {
+      message.delete()
   //command
 
   //Checks channel for nsfw
