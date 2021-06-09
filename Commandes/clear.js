@@ -31,6 +31,9 @@ module.exports.run = async (client, message, args) => {
                     embeded.setColor('GREEN')
                     embeded.setFooter(`Par : ${message.author.tag}`)
                     message.channel.send(embeded) }
+                    message.delete() 
+
+
 module.exports.help = {
     name: 'clear'
 }; 
