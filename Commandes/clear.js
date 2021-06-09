@@ -34,6 +34,7 @@ module.exports.run = async (client, message, args) => {
                     message.channel.send(embeded) }
 
 
-module.exports.help = {
-    name: 'clear'
-}; 
+module.exports.config = {
+        name:"clear",
+        aliases:[]
+}
