@@ -30,11 +30,13 @@ module.exports.run = async (client, message, args) => {
                     embeded.setDescription(`${args[0]} Message(s) ont été supprimé(s)`)
                     embeded.setColor('GREEN')
                     embeded.setFooter(`Par : ${message.author.tag}`)
-                    message.delete({ timeout: 2000 })
-                    message.channel.send(embeded) }
+                    message.channel.send(embeded) 
+                    message.delete({ timeout: 3000 })
+
+                
+                }
 
 
-module.exports.config = {
-        name:"clear",
-        aliases:[]
-}
+module.exports.help = {
+    name: 'clear'
+}; 
