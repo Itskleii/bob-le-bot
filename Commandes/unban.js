@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args) => {
             } else {
                 message.guild.members.unban(bannedMember.user.id, reason)
                 var sembed2 = new MessageEmbed()
-                     .setTitle('débannissement')
+                     .setTitle('Débannissement')
                     .setColor("GREEN")
                     .addField('Membre débanni:', `${bannedMember.user.tag}` )
                     .addField('Modérateur :', '➪ ' +  `${message.author.username}#${message.author.discriminator}`, true)
