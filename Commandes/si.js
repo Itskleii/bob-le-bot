@@ -45,7 +45,7 @@ const EmbedSi = new Discord.MessageEmbed()
     value: totalroles,
     inline: true,
 },{
-    name: 'Nombre de channel présent sur le serveur', 
+    name: 'Nombre de salon textuel présent sur le serveur', 
     value: totalchanneltext,
     inline:true,
 },{
