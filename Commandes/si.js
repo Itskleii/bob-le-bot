@@ -10,7 +10,7 @@ let totalmembers = message.guild.members.cache.size;
 let totalbots = message.guild.members.cache.filter(member => member.user.bot).size;
 let totalroles = message.guild.roles.cache.size;
 let owner = message.guild.owner.user.tag;
-let totalchannel = message.guild.channels.cache.size;
+let totalchanneltext = message.guild.channels.cache.filter(channel => channel.type === "text");
 let createdAt = message.guild.createdAt;
 let ownerID = message.guild.ownerID;
 let region = message.guild.region;
@@ -46,7 +46,7 @@ const EmbedSi = new Discord.MessageEmbed()
     inline: true,
 },{
     name: 'Nombre de channel présent sur le serveur', 
-    value: totalchannel,
+    value: totalchanneltext,
     inline:true,
 },{
     name: 'Created at',
