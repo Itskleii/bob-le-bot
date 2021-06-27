@@ -1,19 +1,23 @@
 const Discord = require("discord.js")
+const moment = require("moment")
+
 
 module.exports.run = async (bot,message) => {
 message.delete(); 
 
-  let onlines = message.guild.members.cache.filter(({
+let onlines = message.guild.members.cache.filter(({
     presence
 }) => presence.status !== 'offline').size;
 let totalmembers = message.guild.members.cache.size;
 let totalbots = message.guild.members.cache.filter(member => member.user.bot).size;
 let totalroles = message.guild.roles.cache.size;
 let owner = message.guild.owner.user.tag;
-let totalchanneltext = message.guild.channels.cache.filter(channel => channel.type === "text");
-let createdAt = message.guild.createdAt;
+let createdAt = moment(message.guild.createdAt).format('DD/MMM/YYYY');
 let ownerID = message.guild.ownerID;
 let region = message.guild.region;
+let emoji = message.guild.emojis.cache.size;
+var totalchanneltext = message.guild.channels.cache.filter(channel => channel.type === "text").size;
+var totalchannelvoice = message.guild.channels.cache.filter(channel => channel.type === "voice").size;
 
 
 const EmbedSi = new Discord.MessageEmbed()
@@ -21,7 +25,7 @@ const EmbedSi = new Discord.MessageEmbed()
 .setTitle('Information du serveur')
 .setDescription('**__Voici les informations du serveur__**')
 .addFields({
-    name:'propriétaire du serveur',
+    name:'Owner',
     value: owner,
     inline: true,
 },{
@@ -29,36 +33,49 @@ const EmbedSi = new Discord.MessageEmbed()
     value: ownerID,
     inline: true,
 },{
-    name: 'Nombre de membres total',
+    name: '\u200b',
+    value: '\u200b',
+    inline: true,
+},{
+    name: 'Membres',
     value: totalmembers,
     inline: true,
 },{
-    name: 'Membres connéctés : ',
+    name: 'Membres connéctés',
     value: onlines,
     inline: true,
 },{
-    name: 'Nombre de bots sur le serveur : ',
+    name: 'Bots',
     value: totalbots,
     inline: true,
 },{
-    name: 'Nombre de roles sur le serveur : ',
+    name: 'Roles',
     value: totalroles,
     inline: true,
 },{
-    name: 'Nombre de salon textuel présent sur le serveur', 
+    name: 'Salon textuel', 
     value: totalchanneltext,
     inline:true,
 },{
-    name: 'Created at',
+    name: 'Salon vocaux',
+    value: totalchannelvoice,
+    inline: true,
+},{
+    name: "Emoji",
+    value: emoji,
+    inline: true,
+},{
+    name: 'Crée le',
     value: createdAt,
     inline: true,
 },{
     name: 'Region',
     value: region,
     inline: true,
-}
+},
 
 )
+.setFooter(`Commande executé par ${message.author.tag}`)
 .setTimestamp()
 message.channel.send(EmbedSi);
 }
