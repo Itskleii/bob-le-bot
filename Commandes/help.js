@@ -6,7 +6,7 @@ const Discord = require('discord.js');
       message.delete()
 
         const modération = new Discord.MessageEmbed()
-        .setTitle('modération')
+        .setTitle('Modération')
         .addField('*kick', 'Kick un membre du serveur')
         .addField('*ban', 'Banni un membre du serveur')
         .setColor('RED')
