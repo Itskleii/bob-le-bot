@@ -3,9 +3,32 @@ const Discord = require('discord.js');
 module.exports.run = (client, message, args) => {
     message.delete()
 
-    if (!message.guild.member(message.author).hasPermission('KICK_MEMBERS')) { return message.channel.send("Vous n'avez pas les permissions de kick un membre **[KICK_MEMBERS]**"); }
-    if (!message.guild.member(client.user).hasPermission('KICK_MEMBERS')) { return message.channel.send("Je n'ai pas les permission de kick ce membre **(Je suis hiérarchiquement inférieur)**"); }
-    if (message.mentions.users.size === 0) { return message.channel.send("Vous n'avez pas mentionner le membre que vous souhaitez kick. **(@discord#0001)**"); }
+
+
+    var embednoperm = new Discord.MessageEmbed()
+    .setColor('RED') 
+    .setTitle('ERREUR')
+    .setDescription(`:x: Vous n'avez pas la permission de kick un utilisateur, **[KICK_MEMBERS]**`)
+    .setTimestamp()
+
+    var embednopermbot = new Discord.MessageEmbed()
+    .setColor('RED') 
+    .setTitle("ERREUR")
+    .setDescription(`:x: Je n'ai pas la permission de kick cet utilisateur`)
+    .setTimestamp()
+
+    var nomention = new Discord.MessageEmbed()
+    .setColor('RED')
+    .setTitle("ERREUR")
+    .setDescription(`:x: Vous n'avea pas mentionner le membre que vous souhaitez kick, **(@discord#0001)**`)
+    .setTimestamp()
+
+
+
+
+    if (!message.guild.member(message.author).hasPermission('KICK_MEMBERS')) { return message.channel.send(embednoperm); }
+    if (!message.guild.member(client.user).hasPermission('KICK_MEMBERS')) { return message.channel.send(embednopermbot); }
+    if (message.mentions.users.size === 0) { return message.channel.send(nomention); }
 
         let kickMember = message.guild.member(message.mentions.users.first());
         if (!kickMember) { return message.channel.send("La personne que vous souhaitez kick est introuvable."); }
