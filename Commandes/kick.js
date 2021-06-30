@@ -20,7 +20,7 @@ module.exports.run = (client, message, args) => {
     var nomention = new Discord.MessageEmbed()
     .setColor('RED')
     .setTitle("ERREUR")
-    .setDescription(`:x: Vous n'avea pas mentionner le membre que vous souhaitez kick, **(@discord#0001)**`)
+    .setDescription(`:x: Vous n'avez pas mentionner le membre que vous souhaitez kick, **(@discord#0001)**`)
     .setTimestamp()
 
 
