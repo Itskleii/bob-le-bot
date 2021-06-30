@@ -22,8 +22,8 @@ var totalchannelvoice = message.guild.channels.cache.filter(channel => channel.t
 
 const EmbedSi = new Discord.MessageEmbed()
 .setColor('RED')
-.setTitle('Information du serveur')
-.setDescription('**__Voici les informations du serveur__**')
+.setTitle('Serveur info')
+.setDescription('Informations du serveur')
 .addFields({
     name:'Owner',
     value: owner,
