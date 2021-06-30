@@ -29,6 +29,7 @@ const Discord = require('discord.js');
         .addField('*annonce', 'Envoie un message en embed')
         .addField('*clear', 'Supprime le nombre de messages préciser')
         .addField('*poll', 'Sert à faire un sondage')
+        .addField('*si','Affiche les informations du serveur')
         .setColor('RED')
         .setTimestamp()
 
