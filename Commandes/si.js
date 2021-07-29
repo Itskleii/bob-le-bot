@@ -25,11 +25,11 @@ const EmbedSi = new Discord.MessageEmbed()
 .setTitle('Serveur info')
 .setDescription('Informations du serveur')
 .addFields({
-    name:'Owner',
+    name:'👑 Owner',
     value: owner,
     inline: true,
 },{
-    name: 'Owner ID',
+    name: ' 🆔 Owner ID',
     value: ownerID,
     inline: true,
 },{
@@ -37,39 +37,39 @@ const EmbedSi = new Discord.MessageEmbed()
     value: '\u200b',
     inline: true,
 },{
-    name: 'Membres',
+    name: '👥 Membres',
     value: totalmembers,
     inline: true,
 },{
-    name: 'Membres connéctés',
+    name: '🟢 Membres connéctés',
     value: onlines,
     inline: true,
 },{
-    name: 'Bots',
+    name: '🤖 Bots',
     value: totalbots,
     inline: true,
 },{
-    name: 'Roles',
+    name: '🎭 Roles',
     value: totalroles,
     inline: true,
 },{
-    name: 'Salon textuel', 
+    name: '🖋️ Salon textuel', 
     value: totalchanneltext,
     inline:true,
 },{
-    name: 'Salon vocaux',
+    name: '🔉 Salon vocaux',
     value: totalchannelvoice,
     inline: true,
 },{
-    name: "Emoji",
+    name: "☺️ Emoji",
     value: emoji,
     inline: true,
 },{
-    name: 'Crée le',
+    name: '📅 Crée le',
     value: createdAt,
     inline: true,
 },{
-    name: 'Region',
+    name: '🌐 Region',
     value: region,
     inline: true,
 },
