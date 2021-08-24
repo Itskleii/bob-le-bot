@@ -67,7 +67,7 @@ client.on("message", message => {
     };
     }); console.log()
 
-    client.on("messageCreate", message => { 
+     client.on("messageCreate", message => { 
         if (message.content === 'ping') return message.reply("pong") });
     
     
@@ -79,8 +79,9 @@ client.on("message", message => {
             .addField( `Messagd d'avant :`, oldMessage.content )
             .addField(`Message d'apres: `, newMessage.content)
             .setTimestamp()
-        client.guilds.cache.get('833052529571004476').channels.cache.get('845280697295175690').send( embedmessageUpdate )
-    });
+        client.guilds.cache.get('').channels.cache.get('879700559085572127').send( embedmessageUpdate )
+    }
+    );
     
     client.on("messageDelete", message => {
         const embedmessageDelete = new Discord.MessageEmbed()
@@ -88,7 +89,7 @@ client.on("message", message => {
             .setTitle('Un message a été supprimer')
             .addField(' message supprimé:', message.content)
             .setTimestamp()
-        client.guilds.cache.get('833052529571004476').channels.cache.get('845280697295175690').send( embedmessageDelete)
+        client.guilds.cache.get('769988807595393095').channels.cache.get('879700559085572127').send( embedmessageDelete)
     
     
     } );
@@ -99,7 +100,7 @@ client.on("message", message => {
             .setTitle("Un nouveau membre a rejoins le serveur !")
             .setDescription(`bienvenue à ${member.user}`)
             .setTimestamp()
-        client.guilds.cache.get('833052529571004476').channels.cache.get('845280697295175690').send( embedmemberAdd )
+        client.guilds.cache.get('769988807595393095').channels.cache.get('879700559085572127').send( embedmemberAdd )
     
     } );
     
@@ -109,7 +110,7 @@ client.on("message", message => {
             .setTitle("Un membre vient de quitter le serveur")
             .setDescription(` bye :wave: ${member.user}`)
             .setTimestamp()
-        client.guilds.cache.get('833052529571004476').channels.cache.get('845280697295175690').send( embedmemberRemove )
+        client.guilds.cache.get('769988807595393095').channels.cache.get('879700559085572127').send( embedmemberRemove )
     
             
     });
