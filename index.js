@@ -67,6 +67,51 @@ client.on("message", message => {
     };
     }); console.log()
 
-
+    client.on("messageCreate", message => { 
+        if (message.content === 'ping') return message.reply("pong") });
+    
+    
+    
+    client.on("messageUpdate", async (oldMessage, newMessage) => {
+        const embedmessageUpdate = new Discord.MessageEmbed()
+            .setColor('GOLD')
+            .setTitle('Un message a été modifier')
+            .addField( `Messagd d'avant :`, oldMessage.content )
+            .addField(`Message d'apres: `, newMessage.content)
+            .setTimestamp()
+        client.guilds.cache.get('833052529571004476').channels.cache.get('845280697295175690').send( embedmessageUpdate )
+    });
+    
+    client.on("messageDelete", message => {
+        const embedmessageDelete = new Discord.MessageEmbed()
+            .setColor('GOLD')
+            .setTitle('Un message a été supprimer')
+            .addField(' message supprimé:', message.content)
+            .setTimestamp()
+        client.guilds.cache.get('833052529571004476').channels.cache.get('845280697295175690').send( embedmessageDelete)
+    
+    
+    } );
+    
+    client.on("guildMemberAdd", member => {
+        const embedmemberAdd = new Discord.MessageEmbed()
+            .setColor('GOLD')
+            .setTitle("Un nouveau membre a rejoins le serveur !")
+            .setDescription(`bienvenue à ${member.user}`)
+            .setTimestamp()
+        client.guilds.cache.get('833052529571004476').channels.cache.get('845280697295175690').send( embedmemberAdd )
+    
+    } );
+    
+    client.on("guildMemberRemove", member => {
+         const embedmemberRemove = new Discord.MessageEmbed()
+            .setColor('GOLD')
+            .setTitle("Un membre vient de quitter le serveur")
+            .setDescription(` bye :wave: ${member.user}`)
+            .setTimestamp()
+        client.guilds.cache.get('833052529571004476').channels.cache.get('845280697295175690').send( embedmemberRemove )
+    
+            
+    });
     
 client.login(process.env.TOKEN)      
