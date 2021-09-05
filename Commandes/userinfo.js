@@ -31,7 +31,7 @@ module.exports.run = async (client, message, args) => {
     let userStatus = user.presence.status;
     switch (userStatus) {
       	case "online": {
-        	userStatus = `$En ligne`;
+        	userStatus = `En ligne`;
         	break;
       	};
       	case "offline": {
