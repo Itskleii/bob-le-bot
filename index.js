@@ -67,7 +67,7 @@ client.on("message", message => {
     };
     }); console.log()
 
-     client.on("messageCreate", message => { 
+     client.on("message", message => { 
         if (message.content === 'ping') return message.reply("pong") });
     
     
