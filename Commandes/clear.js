@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 
+module.exports.run = async (client, message, args) => {
 let msg;
 let amount = args[0];
 
@@ -30,7 +31,8 @@ msg = await message.channel.send(`**${parseInt(amount, 10) - 1}** messages suppr
 
 return setTimeout(() => {
   msg.delete().catch(() => {});
-}, 3000); 
+}, 3000);
+ } 
 
 module.exports.help = {
     name: 'clear'
