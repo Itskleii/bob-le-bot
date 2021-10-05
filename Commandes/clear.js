@@ -7,7 +7,7 @@ let amount = args[0];
 if (!amount || Number.isNaN(parseInt(amount, 10)) || parseInt(amount, 10) < 1 || parseInt(amount, 10) > 100) {
   msg = await message.channel.send('Vous devez préciser un nombre de messages à supprimer entre 1 et 100 !');
 
-  setTimeout(() => {
+  return setTimeout(() => {
     msg.delete().catch(() => {});
   }, 5000);
 }
