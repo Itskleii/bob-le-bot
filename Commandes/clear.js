@@ -24,7 +24,7 @@ module.exports.run = async (client, message, args) => {
                     return message.channel.send(msglimit) }
                    
                    
-                    await message.channel.delete(args[0]);
+                    await message.delete(args[0]);
 
                     const embeded = new Discord.MessageEmbed()
                     embeded.setDescription(`${args[0]} Message(s) ont été supprimé(s)`)
