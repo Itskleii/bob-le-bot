@@ -3,11 +3,7 @@ const Discord = require('discord.js');
 module.exports.run = async (client, message, args) => {
     message.delete()
 
-    if (!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) {
-        const notpermer = new Discord.MessageEmbed();
-        notpermer.setDescription(`:x: Vous n'avez pas la permission de créer un sondage`)
-        return message.channel.send(notpermer)
-    }
+
 
     if (!args[0]) {
         const notmentions = new Discord.MessageEmbed();
