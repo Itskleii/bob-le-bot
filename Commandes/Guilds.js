@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 
 module.exports.run = async (client, message, args) => {
 
-    if (!message.guild.members.cache.get(message.author.id).permissions.has('ADMINISTRATOR')) { return message.channel.send( ( {content:"vous devez avoir les perms admin"}  )) }
+    if (!message.guild.members.cache.get(message.author.id).permissions.has('ADMINISTRATOR')) { return message.channel.send("vous devez avoir les perms admin")}
 
     let i0 = 0;
         let i1 = 10;
@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
             .setTitle(`Page : ${page}/${Math.ceil(client.guilds.cache.size/10)}`)
             .setDescription(description);
 
-        const msg = await message.channel.send(  {embeds: [embed] }  );
+        const msg = await message.channel.send(embed);
         
         await msg.react("⬅");
         await msg.react("➡");
@@ -76,7 +76,7 @@ module.exports.run = async (client, message, args) => {
 
                 embed.setTitle(`Page: ${page}/${Math.round(client.guilds.cache.size/10)}`)
                     .setDescription(description);
-                msg.edit( {embeds: [embed] } );
+                msg.edit(embed);
 
             }
 
