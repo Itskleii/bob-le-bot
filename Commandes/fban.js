@@ -1,6 +1,7 @@
 const { MessageEmbed } = require('discord.js')
 
 module.exports.run = async(client, message, args) => {
+    message.delete()
 
     const user = message.mentions.users.first();
     const embedSaying = new MessageEmbed()
