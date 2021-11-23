@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
 
         const embed = new Discord.MessageEmbed()
             .setAuthor(message.author.tag, message.author.displayAvatarURL())
-            .setFooter(client.user.username)
+            .setFooter(client.user.username, client.user.displayAvatarURL())
             .setTitle(`Page : ${page}/${Math.ceil(client.guilds.cache.size/10)}`)
             .setDescription(description);
 
