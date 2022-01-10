@@ -63,7 +63,7 @@ client.on("message", message => {
     if (message.author.bot) return false;
     
     if  (message.mentions.has(client.user.id)) {
-        message.channel.send("Ta gueule, me @ plus jamais ou j'te ban")
+        message.channel.send("Mon préfix est, *, *help")
     };
     }); console.log()
 
