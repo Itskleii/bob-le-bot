@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 
 module.exports.run = async (client, message, args) => {
 
-    if (!message.guild.members.cache.get(message.author.id).permissions.has('ADMINISTRATOR')) { return message.channel.send("vous devez avoir les perms admin")}
+    if (!message.guild.members.cache.get(message.author.id).permissions.has('ADMINISTRATOR')) { return message.channel.send("vous devez avoir la permission administrateur")}
 
     let i0 = 0;
         let i1 = 10;
