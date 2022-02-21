@@ -14,7 +14,6 @@ let totalroles = message.guild.roles.cache.size;
 let owner = message.guild.owner.user.tag;
 let createdAt = moment(message.guild.createdAt).format('DD/MMM/YYYY');
 let ownerID = message.guild.ownerID;
-let region = message.guild.region;
 let emoji = message.guild.emojis.cache.size;
 var totalchanneltext = message.guild.channels.cache.filter(channel => channel.type === "text").size;
 var totalchannelvoice = message.guild.channels.cache.filter(channel => channel.type === "voice").size;
@@ -67,10 +66,6 @@ const EmbedSi = new Discord.MessageEmbed()
 },{
     name: '📅 Crée le',
     value: createdAt,
-    inline: true,
-},{
-    name: '🌐 Region',
-    value: region,
     inline: true,
 },
 
